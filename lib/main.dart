@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp(appName: 'Chicken'));
+  runApp(MyApp(
+    appName: 'First App',
+  ));
 }
 
+//Stateless
 class MyApp extends StatelessWidget {
   final String appName;
+
   const MyApp({required this.appName});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false, title: appName, home: HomeScreen());
+    return MaterialApp(title: appName, home: HomeScreen());
   }
 }
 
@@ -19,45 +22,33 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Intro to Widget'),
+      backgroundColor: Colors.pinkAccent,
+      //AppBar
+      appBar: AppBar(
+        title: Text(
+          'Intro to Widget',
+          textAlign: TextAlign.end,
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              color: Colors.black,
+              wordSpacing: 0.6,
+              letterSpacing: 0.6,
+              decoration: TextDecoration.lineThrough),
         ),
-        body: Row(
+        centerTitle: true,
+        backgroundColor: Colors.amber,
+      ),
+
+      //Body
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Row(),
-            Text(
-              'Hello World',
-              textAlign: TextAlign.center,
-              textDirection: TextDirection.ltr,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.red,
-              ),
-            ),
-            Text(
-              'Hello World',
-              textAlign: TextAlign.center,
-              textDirection: TextDirection.ltr,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.red,
-              ),
-            ),
-            Text(
-              'Hello World',
-              textAlign: TextAlign.center,
-              textDirection: TextDirection.ltr,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.red,
-              ),
-            ),
-          ],
-        ));
+          children: [Text('Hello World')],
+        ),
+      ),
+    );
   }
 }
