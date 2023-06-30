@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple),
+          useMaterial3: true),
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
@@ -22,7 +25,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.greenAccent,
         title: Text('Basic Widget'),
         centerTitle: true,
       ),
@@ -32,10 +37,10 @@ class HomeScreen extends StatelessWidget {
           children: [
             Container(
               color: Colors.green,
-              height: 100,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              alignment: Alignment.center,
+              // height: 100,
+              // width: 100,
+              // margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              // alignment: Alignment.center,
               child: Text(
                 'Ostad',
                 style: TextStyle(color: Colors.white, fontSize: 24),
