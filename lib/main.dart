@@ -1,52 +1,58 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp(
-    appName: 'First App',
-  ));
+  runApp(MyApp());
 }
 
-//Stateless
 class MyApp extends StatelessWidget {
-  final String appName;
-
-  const MyApp({required this.appName});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: appName, home: HomeScreen());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
+    );
   }
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pinkAccent,
-      //AppBar
       appBar: AppBar(
-        title: Text(
-          'Intro to Widget',
-          textAlign: TextAlign.end,
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              color: Colors.black,
-              wordSpacing: 0.6,
-              letterSpacing: 0.6,
-              decoration: TextDecoration.lineThrough),
-        ),
+        title: Text('Basic Widget'),
         centerTitle: true,
-        backgroundColor: Colors.amber,
       ),
-
-      //Body
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('Hello World')],
+          children: [
+            Container(
+              color: Colors.green,
+              height: 100,
+              width: 100,
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              alignment: Alignment.center,
+              child: Text(
+                'Ostad',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+            Container(
+              color: Colors.red,
+              height: 100,
+              width: 100,
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              alignment: Alignment.center,
+              child: Text(
+                'Ostad',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            )
+          ],
         ),
       ),
     );
